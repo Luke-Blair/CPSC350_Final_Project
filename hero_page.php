@@ -17,6 +17,26 @@ body, html {
 body {
   background-color: white;
 }
+
+input[type=text] {
+  width: 140px;
+  box-sizing: border-box;
+  border: 4px solid #ccc;
+  border-radius: 40px;
+  font-size: 13px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  margin-left: 10%;
+}
+
+input[type=text]:focus {
+  width: 80%;
+}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -503,6 +523,10 @@ function scrollFunction() {
 <br>
 <div style="background-color: white;">
 <br>
+<form>
+  <input type="text" name="search" placeholder="Find a hero..." onkeydown="return handleEnter(event)">
+</form>
+<br>
 <div class="smallcard-container">
 <?php
 
@@ -531,6 +555,15 @@ while($row = $result->fetch_assoc()) {
 </div>
 </div>
 <script>
+    function handleEnter(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            // Add your search functionality here
+            alert("Searching for: " + event.target.value);
+            return false; // Prevent form submission
+        }
+    }
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
