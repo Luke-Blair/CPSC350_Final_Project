@@ -35,6 +35,7 @@
 </div>
 
 <img src="team.png" alt="layironman">
+<br>
 <div class="slideshow-container">
 
 <div class="mySlides">
@@ -92,46 +93,73 @@ function showSlides(n) {
 }
 </script>
 
-<h1>Testa</h1>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
-<p>Hoagie Fest</p>
+<br>
+<br>
+<div class="divider" style="color: black; font-family: Roboto, sans-serif;">what we store, fix images later to be white/black outline, only want iron man to be color here</div>
+<br>
+<br>
+<div style="background-color: black;">
+<div class="container">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="marvel_logo.png" alt="Avatar" style="width:300px;height:300px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>John Doe</h1> 
+        <p>Architect & Engineer</p> 
+        <p>We love that guy</p>
+      </div>
+    </div>
+  </div>
 
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="dc_logo.png" alt="Avatar" style="width:300px;height:300px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>John Doe</h1> 
+        <p>Architect & Engineer</p> 
+        <p>We love that guy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="darkhorse_logo.png" alt="Avatar" style="width:300px;height:300px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>John Doe</h1> 
+        <p>Architect & Engineer</p> 
+        <p>We love that guy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="lucasfilm.png" alt="Avatar" style="width:300px;height:300px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Lucasfilm</h1> 
+        <p>We store characters from both the light and dark side (that sounded nerdier than anticipated)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<div class="divider" style="color: black; font-family: Roboto, sans-serif;">database brought to you by</div>
+<br>
+<br>
+<img src="cpsc.png" alt="layironman">
 
 
 <script>
