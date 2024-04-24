@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <title>Culmination Project</title>
         <link rel = "stylesheet" href="stylesheet.css">
+        <link rel="icon" type="image/x-icon" href="logo_small.jpg">
         <script src="script.js"></script>
 
         <?php
