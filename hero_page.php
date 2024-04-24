@@ -357,13 +357,10 @@ img {
     </head>
 
 <div id="navbar">
-  <a href="#default" id="logo">WebpageLogo</a>
+  <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/home_page.php" id="logo"><img src="tower.jpg" style="width:150px; height: au    to;"></a>
   <div id="navbar-right">
-    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/home_page.php">Home</a>
     <a class="active" href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/hero_page.php">Heroes</a>
     <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/villain_page.php">Villains</a>
-    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/neutral_page.php">Neutrals</a>
-    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/about_page.html">About</a>
   </div>
 </div>
 
@@ -379,7 +376,7 @@ function scrollFunction() {
   } else if (document.body.scrollTop > 499 || document.documentElement.scrollTop > 499) {
     document.getElementById("navbar").style.padding = "0px 0px";
     document.getElementById("logo").style.fontSize = "0px";
-    document.getElementById("navbar").style.top = "-50px"
+    document.getElementById("navbar").style.top = "-100px"
   } else {
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("logo").style.fontSize = "35px";

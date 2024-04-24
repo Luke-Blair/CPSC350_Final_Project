@@ -10,6 +10,7 @@
         <script src="script.js"></script>
 
         <?php
+                $logo = "logo_small.jpg";
                 $servername = "localhost";
                 $DB = "Team_Panther";
                 include "credentials.php";
@@ -24,13 +25,12 @@
     </head>
     <body>
 <div id="navbar">
-  <a href="#default" id="logo">WebpageLogo</a>
+    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/home_page.php" id="logo"><img src="<?= $logo ?>" style="width:100px; height: auto;"></a>
+  <!--<a href="#default" id="logo"><img src="test2.jpg" style="width:10%; float: left; height:auto;"></a>-->
   <div id="navbar-right">
-    <a class="active" href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/home_page.php">Home</a>
     <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/hero_page.php">Heroes</a>
     <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/villain_page.php">Villains</a>
-    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/neutral_page.php">Neutrals</a>
-    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/about_page.html">About</a>
+    <a href="https://cpsc.umw.edu/Team_Panther/CPSC350_Final_Project/login.php">Log In</a>
   </div>
 </div>
 
@@ -95,7 +95,7 @@ function showSlides(n) {
 
 <br>
 <br>
-<div class="divider" style="color: black; font-family: Roboto, sans-serif;">what we store, fix images later to be white/black outline, only want iron man to be color here</div>
+<div class="divider" style="color: black; font-family: Roboto, sans-serif;">what we store</div>
 <br>
 <br>
 <div style="background-color: black;">
@@ -103,12 +103,11 @@ function showSlides(n) {
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="marvel_logo.png" alt="Avatar" style="width:300px;height:300px;">
+        <img src="marvel2.jpg" alt="Avatar" style="width:300px;height:300px;">
       </div>
       <div class="flip-card-back">
-        <h1>John Doe</h1> 
-        <p>Architect & Engineer</p> 
-        <p>We love that guy</p>
+        <h1>Marvel</h1> 
+        <p>Heroes and villains from the MCU</p> 
       </div>
     </div>
   </div>
@@ -116,12 +115,12 @@ function showSlides(n) {
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="dc_logo.png" alt="Avatar" style="width:300px;height:300px;">
+        <img src="dc.jpg" alt="Avatar" style="width:300px;height:300px;">
       </div>
       <div class="flip-card-back">
-        <h1>John Doe</h1> 
-        <p>Architect & Engineer</p> 
-        <p>We love that guy</p>
+        <h1>DC</h1> 
+        <p>The lesser Marvel</p>
+
       </div>
     </div>
   </div>
@@ -129,20 +128,19 @@ function showSlides(n) {
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="darkhorse_logo.png" alt="Avatar" style="width:300px;height:300px;">
+        <img src="dh.jpg" alt="Avatar" style="width:300px;height:300px;">
       </div>
       <div class="flip-card-back">
-        <h1>John Doe</h1> 
-        <p>Architect & Engineer</p> 
-        <p>We love that guy</p>
-      </div>
-    </div>
-  </div>
+        <h1>Dark Horse Comics</h1> 
+        <p>They make stuff.</p> 
+</div>    
+</div>  
+</div>
 
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="lucasfilm.png" alt="Avatar" style="width:300px;height:300px;">
+        <img src="lucas.jpg" alt="Avatar" style="width:300px;height:300px;">
       </div>
       <div class="flip-card-back">
         <h1>Lucasfilm</h1> 
@@ -171,14 +169,16 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "10px 10px";
     document.getElementById("logo").style.fontSize = "18px";
     document.getElementById("navbar").style.top = "0";
+    document.getElementById("logo").style.width="50px";
   } else if (document.body.scrollTop > 499 || document.documentElement.scrollTop > 499) {
     document.getElementById("navbar").style.padding = "0px 0px";
     document.getElementById("logo").style.fontSize = "0px";
-    document.getElementById("navbar").style.top = "-50px"
+    document.getElementById("navbar").style.top = "-100px"
   } else {
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("logo").style.fontSize = "35px";
     document.getElementById("navbar").style.top = "0";
+    document.getElementById("logo").style.width="100px";    
   }
 }
 </script>

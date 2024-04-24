@@ -18,8 +18,8 @@
                     echo "unable to connect :(";
                 } else {
                 }
-$bottomCols = array("12"=>"#090C13","5"=>"#F8E7D7","13"=>"#FFC608");
-$topCols = array("12"=>"#FFB53D","5"=>"#AA0B0F","13"=>"#77C5D2");
+$bottomCols = array("12"=>"#090C13","5"=>"#F8E7D7","13"=>"#FFC608","7"=>"#30271E","14"=>"#201010","8"=>"#840403","15"=>"#490506","4"=>"#1E1818","16"=>"#400F2C","17"=>"#4C4A21","18"=>"#384029","24"=>"#FBF3CF","30"=>"#6B7946","28"=>"#8F4403","27"=>"#FBF4EE","29"=>"#AFA8A2","26"=>"#FF852D","23"=>"#644C00");
+$topCols = array("12"=>"#FFB53D","5"=>"#AA0B0F","13"=>"#77C5D2","7"=>"#FCEEAD","14"=>"#A6AF9C","8"=>"#FCA710","15"=>"#5B95E9","4"=>"#FC0427","16"=>"#C5D5EF","17"=>"#EED882","18"=>"#FAF3D6","24"=>"#C51710","30"=>"#F6FCD8","28"=>"#ED120C","27"=>"#3A1D2F","29"=>"#5E5149","26"=>"#56753C","23"=>"#F95702");
 
 if(isset($_GET['character']) && !empty($_GET['character'])) {
     $char = htmlentities($_GET['character']);
@@ -67,6 +67,8 @@ if(isset($_GET['character']) && !empty($_GET['character'])) {
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+
   .bookmark {
     position: fixed;
     top: 30%;
@@ -106,6 +108,9 @@ $fields = $result->fetch_fields();
 //    echo "<h5>" . $col->name . "</h5>";
 //}
 $row = $result->fetch_assoc();
+
+$result = $conn->query("SELECT s.power FROM Hero_Power h INNER JOIN Superpower s ON h.superpower_id = s.superpower_id AND h.superhero_id = $char");
+
 //foreach ($row as $data) {
 //    echo "<p>" . $data . "</p>";
 //}
@@ -128,11 +133,37 @@ if($row['identity_status']=='PI') {
 } else {
     echo 'secretly known';
 }
+$get_race = $conn->query("SELECT species_name FROM Race WHERE race_id = {$row['race_id']}");
+$race_row = $get_race->fetch_assoc();
+echo '<br>' . 'race: ' . $race_row['species_name'];
+echo '</p>';
+echo "<br>";
+
+echo '<h5 style="margin-left: 10%">Powers</h5>';
+echo '<div class="colored-line"></div>';
+$type = ($row['alignment']=='good') ? 'hero' : 'villain';
+echo '<p style="margin-left: 7%; margin-right: 67%; font-size: 27px">What makes this ' . $type  . " a " . $type . ".</p>";
+
+echo '<p class="colored-box" style="font-size: 27px">';
+while($row = $result->fetch_assoc()) {
+    foreach($row as $power) {
+        echo $power . '<br>';
+    }
+}
 echo '</p>';
 
 
+
 ?>
-<div class="parallax"></div>
+<div class="parallax">
+</div>
+<!--<div style="background-color: black">
+<?php
+// can change to query to get publisher name, but nicht wanna do
+//if($row['publisher_id']==1) echo '<img src="marvel2.jpg">';
+?>
+</div>
+-->
 <!--  
 
 <div class="bookmark">

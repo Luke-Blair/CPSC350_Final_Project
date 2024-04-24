@@ -99,12 +99,16 @@
         <input type="text" name="identity">
     </div>
 
-    
-    
+   
+    <div>
+        <label>publisher: </label><br>
+        <input type="text" name="pub">
+    </div>
+  
     
     <div>
-        <label>stat_id(same): </label><br>
-        <input type="text" name="stat_id">
+        <label>race: </label><br>
+        <input type="text" name="race">
     </div>
 
     
@@ -118,6 +122,8 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $race = $_POST['race'];
+    $publisher = $_POST['pub'];
     $hero_alias = $_POST['al'];
     $real_name = $_POST['real_name'];
     $gender = $_POST['gender'];
@@ -130,9 +136,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $bio = $_POST['bio'];
     $identity = $_POST['identity'];
-    $stat_id = $_POST['stat_id'];
     $image_url = $_POST['image_url'];
+}
+    $sql_select = "SELECT race_id FROM Race WHERE species_name='$race'";
+    if ($conn->query($sql_select) === FALSE) {
+        echo "Please add the race " . $race . " before adding a character homie.";
+        die;
+    } 
+    $result = $conn->query($sql_select);    
+    $row = $result->fetch_assoc();
+    $race_id = $row['race_id'];
+
+
+    $sql_select = "SELECT alias_id FROM Hero_Alias WHERE hero_alias='$hero_alias'";
+    $sql_insert = "INSERT INTO Hero_Alias (hero_alias) VALUES ('$hero_alias')";
+
+    if ($conn->query($sql_select)) { }  
+    else echo ($conn->query($sql_insert)) ? "New alias " . $hero_alias . "inserted." : "Error..."; 
     
+    $result = $conn->query($sql_select);
+
+/*    
     $sql = "INSERT INTO Hero_Alias (hero_alias) VALUES ('$hero_alias')";
 
     
@@ -143,14 +167,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $sql = "SELECT alias_id FROM Hero_Alias WHERE hero_alias='$hero_alias'";
     $result = $conn->query($sql);
-
+*/
     $row = $result->fetch_assoc();
     $main_alias_id = $row['alias_id'];
-    $race_id = 1;    
-    $publisher_id = 1;
 
-    $sql = "INSERT INTO Superhero (real_name, gender, eye_color, hair_color, height_inches, weight_lbs, skin_color, alignment, description, biography, identity_status, publisher_id, race_id, main_alias_id, stat_id, image_url) 
-            VALUES ('$real_name', '$gender', '$eye_color', '$hair_color', $height, $weight, '$skin_color', '$alignment', '$description', '$bio', '$identity', $publisher_id, $race_id, $main_alias_id, $stat_id, '$image_url')";
+    $sql_select = "SELECT publisher_id FROM Publisher WHERE company_name='$publisher'";
+    $sql_insert = "INSERT INTO Publisher (company_name) VALUES ('$publisher')";
+    
+    if ($conn->query($sql_select)) { }
+    else echo ($conn->query($sql_insert)) ? "New publisher " . $publisher . "inserted." : "Error...";
+
+    $result = $conn->query($sql_select);
+    $row = $result->fetch_assoc();
+    $publisher_id = $row['publisher_id'];
+
+
+`
+    $sql = "INSERT INTO Superhero (real_name, gender, eye_color, hair_color, height_inches, weight_lbs, skin_color, alignment, description, biography, identity_status, publisher_id, race_id, main_alias_id, image_url) VALUES ('$real_name', '$gender', '$eye_color', '$hair_color', $height, $weight, '$skin_color', '$alignment', '$description', '$bio', '$identity', $publisher_id, $race_id, $main_alias_id, '$image_url')";
 
     // Execute SQL query
     if ($conn->query($sql) === TRUE) {
@@ -158,7 +191,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
 }
 ?>
 
